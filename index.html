@@ -48,6 +48,51 @@
             padding: 20px; /* Add some padding */
         }
 
+        #experience {
+            position: relative;
+            background: #f9fafb; /* Light background for the section */
+            padding: 4rem 1rem;
+        }
+
+        .experience-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #22c55e; /* Green line color */
+            z-index: 1;
+            transform: translateX(-50%);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .experience-item:nth-child(even) .content {
+            left: calc(50% + 20px); /* Position on the right for even items */
+        }
+
+        .experience-item:nth-child(odd) .content {
+            left: calc(50% - 420px); /* Position on the left for odd items */
+        }
+
+        .content {
+            position: relative;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            max-width: 350px;
+        }
 
 
         @keyframes scrollSkills {
@@ -59,11 +104,29 @@
             }
         }
 
+        
         @media (min-width: 640px) {
             .skills-scroll {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 animation: none; /* Disable scrolling for larger screens */
+            }
+            .timeline {
+                left: 10%;
+                transform: none;
+            }
+
+            .content {
+                left: 20px;
+                max-width: 90%;
+            }
+            .experience-item {
+                margin-bottom: 40px;
+            }
+
+            .timeline {
+                left: 5%; /* Adjust timeline to fit mobile screens */
+                width: 3px;
             }
         }
 
@@ -142,6 +205,7 @@
 
             // Start the scroll animation
             smoothScroll();
+
         });
       </script>
       
@@ -201,25 +265,22 @@
         </div>
       </section>
 
-      
-      
-      
-      
-    
-
     <!-- About Me Section -->
-    <section id="about" class="container mx-auto py-16 px-6 text-center" style="background-color: #f3f4f6; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
-        <h2 class="text-3xl md:text-4xl font-semibold">About Me</h2>
-        <p class="text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-            I’m a final-year BSc Computer Science with AI student at Coventry University, passionate about building efficient and scalable software solutions. 
+    <section id="about" class="text-center w-full bg-gradient-to-b from-gray-50 to-gray-200 p-10 rounded-b-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out" style=" border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+        <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">About Me</h2>
+        <p class="text-lg mt-4 max-w-2xl mx-auto leading-relaxed text-gray-600">
+            I’m a final-year BSc Computer Science with AI student at Coventry University, passionate about building efficient and scalable software solutions.
             I’m currently interning at Energy One, where I’m contributing to AI for predictive analytics in energy trading.
         </p>
     </section>
-        
+
+
+    
+    
+
     <!-- Skills Section -->
-    <section id="skills" class="custom-padding">
-        <!-- Skills Container -->
-        <div class="skills-container overflow-hidden relative">
+    <section  class="custom-padding" style = "background-color: #CAD4E0;">
+        <div class="skills-container overflow-hidden relative bg-slate-300 custom-padding">
             <div class="skills-scroll grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-8 text-center">
             <!-- Python -->
             <div class="bg-gradient-to-r from-blue-500 to-blue-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out">
@@ -321,15 +382,16 @@
         </div>
         
     </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="container mx-auto py-16 px-6">
-        <h2 class="text-3xl md:text-4xl font-semibold text-center">Projects</h2>
+    <section id="projects" class="container mx-auto py-16 px-6 bg-gray-100">
+        <h2 class="text-3xl md:text-4xl font-semibold text-center text-gray-800 mb-8">Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold">AI for Energy Price Prediction</h3>
-                <p class="mt-4 text-gray-700 leading-relaxed">Developed a machine learning model to predict energy prices based on historical data and market trends using Python. The project uses predictive modeling for energy price fluctuations.</p>
-                <a href="https://github.com/your-project" class="text-blue-600 mt-4 inline-block font-semibold">View on GitHub</a>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                <h3 class="text-2xl font-bold text-blue-600">AI for Energy Price Prediction</h3>
+                <p class="mt-4 text-gray-700 leading-relaxed">
+                    Developed a machine learning model to predict energy prices based on historical data and market trends using Python.
+                    The project uses predictive modeling for energy price fluctuations.
+                </p>
+                <a href="https://github.com/your-project" class="text-blue-600 mt-4 inline-block font-semibold hover:underline">View on GitHub</a>
             </div>
         </div>
     </section>
